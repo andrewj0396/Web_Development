@@ -11,12 +11,10 @@
   <h1>To Do's</h1>
 
   <form action="index.php" method="POST">
-      <li>Feed the cats:<input type="checkbox" name="Test0[]" value="remove"></li>
-<li>Fight the power:<input type="checkbox" name="Test1[]" value="remove"></li>
-<li>Kill the king:<input type="checkbox" name="Test2[]" value="remove"></li>
-<li>Win the war:<input type="checkbox" name="Test3[]" value="remove"></li>
- <input type="submit" value="Done">
-  </form>
+      <li>Fight the power:      <input type="submit" name="Test0[]" value="remove"></li>
+<li>Kill the king:      <input type="submit" name="Test1[]" value="remove"></li>
+<li>Win the war:      <input type="submit" name="Test2[]" value="remove"></li>
+ </form>
 
   <?php
   //Edits controls

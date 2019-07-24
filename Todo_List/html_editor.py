@@ -46,7 +46,7 @@ def editToDos(todoIndex):
     if todoIndex == '0':
         del todo_list[0]
 
-editToDos(sys.argv[1])
+#editToDos(sys.argv[1])
 
 #print(todo_list)
 
@@ -59,7 +59,7 @@ html_list = ''
 
 for todo in todo_list:
     #print(type(todo_list.index(todo)))
-    html_list += '<li>{:s}{:s}<input type="checkbox" name="Test{:d}[]" value="remove"></li>\n'.format(todo, ":", todo_list.index(todo))
+    html_list += '<li>{:s}{:s}      <input type="submit" name="Test{:d}[]" value="remove"></li>\n'.format(todo, ":", todo_list.index(todo))
 #print(html_list)
 
 #Replace the empty <ul> tags in the page_text with the newly formatted string
