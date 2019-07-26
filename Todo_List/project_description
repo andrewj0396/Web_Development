@@ -67,3 +67,29 @@ require significant rewrites. After adding the ability for user text input and w
 out the deletion of list items the project's prototype will be completed. Then I may 
 rewrite the project using the beautiful soup module to make the html parsing easier. 
 Finally, I'll add some CSS and bells and whistles and call it completed. 
+
+
+Update July 26th 2019
+-------------------
+
+I've accomplished two things today. First I worked out the communication between the PHP code and 
+the Python script. Instead of working with the existing html_editor.py script I created a 
+different script called test.py and set it up to take a number of command line arguments. Then 
+when PHP calls the script it passes the values of the checked boxes as the arguments to the 
+python script. I've also made it so that the PHP script (now called "submission.php") sends the 
+string "0" if the checked box value is a null (ie. if the box was not checked). Just for testing 
+purposes the test.py script logs the arguments to a file called file.txt. And that all works!
+
+The second major thing I accomplished today was the form re-submission issue. The problem was that 
+when using the POST method the form would be submitted twice. First when submit was clicked and 
+then again when the browser refresh button was clicked. This was annoying! I fixed it by putting 
+all the PHP code in a different file (called submission.php) and then having that file 301 
+redirect back to the index.html page. Now when the form is submitted the PHP page is called and 
+run and then 301 is implemented. The server log looks like this:
+
+[Fri Jul 26 06:08:33 2019] 127.0.0.1:49748 [301]: /submission.php
+[Fri Jul 26 06:08:33 2019] 127.0.0.1:49752 [200]: /index.html
+
+This is awesome because it means I over came two of the big challenges I was having with the PHP 
+side of this project! Now all that's left is to stitch the two sides of this project together. But 
+that'll have to wait for another day. 

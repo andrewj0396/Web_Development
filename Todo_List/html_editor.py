@@ -25,6 +25,10 @@ if "<li>" in page_text:
     lines_to_replace = re.findall(r'<li>(.*?)</li>', page_text)
 else:
     lines_to_replace = ""
+
+#print(lines_to_replace)
+#print(type(todo_list[0]))
+
 #Take the elements of lines_to_replace, reformat them, then replace them within the page_text text string
 for line in lines_to_replace:
     #Add <li> and </li> tags to line (the regex above doesn't incluede those)
@@ -41,13 +45,6 @@ for line in lines_to_replace:
 page_text = re.sub(r'\n\n\n\n\s+', ' ', page_text)
 #print(page_text)
 
-#Check if an entry has been replaced
-def editToDos(todoIndex):
-    if todoIndex == '0':
-        del todo_list[0]
-
-#editToDos(sys.argv[1])
-
 #print(todo_list)
 
 todo_text = "\n".join(todo_list)
@@ -59,13 +56,14 @@ html_list = ''
 
 for todo in todo_list:
     #print(type(todo_list.index(todo)))
-    html_list += '<li>{:s}{:s}      <input type="submit" name="Test{:d}[]" value="remove"></li>\n'.format(todo, ":", todo_list.index(todo))
+    html_list += '<li>{:s}{:s}      <input type="checkbox" name="item[]" value="{:s}"></li>\n'.format(todo, ":", todo)#(todo_list.index(todo)+1)
 #print(html_list)
 
 #Replace the empty <ul> tags in the page_text with the newly formatted string
 page_text = page_text.replace("<!--list-->", html_list)
 #print(page_text)
-
+#'''
 #Write the changed html code back to the index.php file
 with open("index.php", "w") as open_file:
     open_file.write(page_text)
+#'''
