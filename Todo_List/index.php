@@ -11,14 +11,9 @@
   <h1>To Do's</h1>
 
   <form action="submission.php" method="POST">
-<li>Walk the dog:      <input type="checkbox" name="item[]" value="Walk the dog"></li>
-<li>Feed the cats:      <input type="checkbox" name="item[]" value="Feed the cats"></li>
 <li>Fight the power:      <input type="checkbox" name="item[]" value="Fight the power"></li>
 <li>Kill the king:      <input type="checkbox" name="item[]" value="Kill the king"></li>
 <li>Win the war:      <input type="checkbox" name="item[]" value="Win the war"></li>
-
-
-
  <input type="submit">
   </form>
 

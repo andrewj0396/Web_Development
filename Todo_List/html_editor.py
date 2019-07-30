@@ -16,7 +16,7 @@ with open("todo's.txt") as r_file:
         todo = r_file.readline()
 
 #Open and read from the index HTML file.
-with open("index.php") as index:
+with open("index.html") as index:
     page_text = index.read()
 
 #First check if there is already a set of list items in there
@@ -47,10 +47,22 @@ page_text = re.sub(r'\n\n\n\n\s+', ' ', page_text)
 
 #print(todo_list)
 
-todo_text = "\n".join(todo_list)
+#Removes the todo elements which are passed in as arguments from php
+todones = [sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5]]
 
+#This for loop weeds out the todones from the list of todos
+for element in todones:
+    if element in todo_list:
+        del todo_list[todo_list.index(element)]
+
+#formatts the todo into and writes them to the todo list file
+todo_text = "\n".join(todo_list)
+#print(todo_text)
+#'''
 with open("todo's.txt", "w") as open_file:
     open_file.write(todo_text)
+#'''
+
 #Prepare string of HTML list items to be injected into html file b/w <ul> tags
 html_list = ''
 
@@ -64,6 +76,6 @@ page_text = page_text.replace("<!--list-->", html_list)
 #print(page_text)
 #'''
 #Write the changed html code back to the index.php file
-with open("index.php", "w") as open_file:
+with open("index.html", "w") as open_file:
     open_file.write(page_text)
 #'''

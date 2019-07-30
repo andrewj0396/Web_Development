@@ -5,7 +5,7 @@ import sys
 
 list = [sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5]]
 
-text = "\n".join(list)
+text = "".join(list)
 #print(text)
 
 with open("file.txt", "w") as open_file:

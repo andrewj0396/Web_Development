@@ -32,7 +32,7 @@
   echo $item[4];
   echo "\n<br>\n";
 */
-  $result = shell_exec("./test.py '$item[0]' '$item[1]' '$item[2]' '$item[3]' '$item[4]'");
+  $result = shell_exec("./html_editor.py '$item[0]' '$item[1]' '$item[2]' '$item[3]' '$item[4]'");
   echo $result;
   header('http/1.1 301 Moved Permanently');
   header('Location: index.html');
