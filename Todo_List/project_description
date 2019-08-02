@@ -77,7 +77,7 @@ the Python script. Instead of working with the existing html_editor.py script I 
 different script called test.py and set it up to take a number of command line arguments. Then 
 when PHP calls the script it passes the values of the checked boxes as the arguments to the 
 python script. I've also made it so that the PHP script (now called "submission.php") sends the 
-string "0" if the checked box value is a null (ie. if the box was not checked). Just for testing 
+string "0" if the checked box value is a null (i.e.. if the box was not checked). Just for testing 
 purposes the test.py script logs the arguments to a file called file.txt. And that all works!
 
 The second major thing I accomplished today was the form re-submission issue. The problem was that 
@@ -93,3 +93,43 @@ run and then 301 is implemented. The server log looks like this:
 This is awesome because it means I over came two of the big challenges I was having with the PHP 
 side of this project! Now all that's left is to stitch the two sides of this project together. But 
 that'll have to wait for another day. 
+
+
+Update Aug 2nd 2019
+-------------------
+
+I've integrated the python and PHP code and they work well together. It was actually remarkably 
+simple. All I did was inject the following lines into the html_editor.py code between the newline 
+remover (line 45) and the todo_text joiner (line59).
+
+```
+#Removes the todo elements which are passed in as arguments from php
+todones = [sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4],sys.argv[5]]
+
+#This for loop weeds out the todones from the list of todos
+for element in todones:
+    if element in todo_list:
+        del todo_list[todo_list.index(element)]
+```
+
+This code takes the arguments which are passed to it by the php script and puts them in a list 
+called "todones." It then uses a forloop to remove any of the todones elements from the todo list 
+before that list is reformatted and written to the todo's.txt file and inserted into the 
+index.html file. This essentially completes the main part of the project. The todo list functions 
+and could be used at this time as a simple web accessible todo list. 
+
+Obviously this approach has a number of problems and is a very hacky way to create a todo list. 
+The largest problem at this point is that you can only delete five items from the todo list at 
+one time. This is limited by the number of arguments php passes to python. I may expand this 
+number in the future so that more items can be checked off at once. This bug hints to a larger 
+problem with the multi-language approach as a whole. There are no good ways (that I know of) to 
+pass variables or lists between PHP and Python. Sure I can have PHP call the py script with 
+arguments or maybe I could have PHP write the list items to a file and have Python read that 
+file. But ultimately this approach was probably the wrong one to take in the first place. What can 
+I say but live and learn.
+
+For the above mentioned reason, I'm going to try to rework this project using PHP only. I'm less 
+well versed in PHP than I am in python so this may be beyond me for the time being. However, I 
+figure it could be a good learning exercise. For now I'll be doing this out of the sub directory 
+named PHP_Todo_List. But if I can get something working this may become an entirely seperate git 
+branch.
