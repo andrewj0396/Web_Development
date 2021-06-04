@@ -1,17 +1,21 @@
 This project in particular just fetches a random dog picture URL from the
 random.dog picture api.
 
+```
 RandomDog	Random pictures of dogs
 
 	https://random.dog/woof.json
+```
 
 This project serves as a simple proof of concept Python3 Flask installation.
 
 To run the app locally for testing / dev purposes just enter the python virtual
 enviroment and launch the main __init.py__ script.
 
+```
 # source venv/bin/activate
 (venv) # python3 app/__init__.py
+```
 
 Then visit http://127.0.0.1:5000/ in a browser.
 
