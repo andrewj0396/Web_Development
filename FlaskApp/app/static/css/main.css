@@ -1,7 +1,7 @@
 /* This is the sytlesheet for the Random Doggo flask app */
 
 body {
-  background-image: url('/Doggo/static/img/flowerdog.jpg');
+  background-image: url('/static/img/flowerdog.jpg');
   background-repeat: repeat;
 }
 
