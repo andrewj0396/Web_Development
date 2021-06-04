@@ -1,4 +1,11 @@
-This is a simple Python3 Flask install.
+This project in particular just fetches a random dog picture URL from the
+random.dog picture api.
+
+RandomDog	Random pictures of dogs
+
+	https://random.dog/woof.json
+
+This project serves as a simple proof of concept Python3 Flask installation.
 
 To run the app locally for testing / dev purposes just enter the python virtual
 enviroment and launch the main __init.py__ script.
