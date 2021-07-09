@@ -7,9 +7,11 @@ random.dog picture api.
 
 [Random.Dog API](https://random.dog/woof.json "API for random.dog")
 
-## Install Dependencies: Linux
+## Install Project & Python Dependencies: Linux
 
 ```
+# git clone https://github.com/BlueSquare23/Web_Development.git
+# cd Web_Development
 # virtualenv venv
 # source venv/bin/activate
 (venv) # pip3 install -r requests.txt
@@ -29,7 +31,7 @@ environment and launch the main \_\_init\_\_.py script.
 
 Then visit `http://127.0.0.1:5000/` in a browser.
 
-#### Important parts:
+#### Important Parts: Project Structure
 
 * app
 * venv
@@ -49,9 +51,7 @@ In the apache.conf we have this line in the main site's virtual host block.
 That tells Apache to execute the flaskapp.wsgi (python wsgi script) to
 bootstrap our Flask application. 
 
-```
-from app import app as application
-```
+`from app import app as application`
 
 #### App Overview:
 
