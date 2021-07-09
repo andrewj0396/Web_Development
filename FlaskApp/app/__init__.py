@@ -10,14 +10,8 @@ app = Flask(__name__)
 
 # Index page contents
 def index():
-	if request.method == 'POST':
-		content = request.form['doggo']
-		if content == "new_doggo":
-			doggo_url = get_doggo()
-			return render_template('index.html', doggo=doggo_url)
-	else:
-		doggo_url = get_doggo()
-		return render_template('index.html', doggo=doggo_url)
+	doggo_url = get_doggo()
+	return render_template('index.html', doggo=doggo_url)
 
 
 def get_doggo():
@@ -29,8 +23,9 @@ def get_doggo():
 	doggo_json = json.loads(g.text)
 	doggo_url = doggo_json["url"]
 
-	if "mp4" in doggo_url:
+	if "mp4" in doggo_url or "webm" in doggo_url:
 		doggo_url = get_doggo()
+
 	return doggo_url
 
 
