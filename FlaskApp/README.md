@@ -12,9 +12,9 @@ random.dog picture api.
 ```
 # virtualenv venv
 # source venv/bin/activate
-(venv) # pip3 install -r requests.txt
-(venv) # python3 __init__.py
 ```
+
+## Introduction:
 
 This project serves as a simple proof of concept Python3 Flask installation.
 
@@ -28,7 +28,7 @@ enviroment and launch the main \_\_init\_\_.py script.
 
 Then visit `http://127.0.0.1:5000/` in a browser.
 
-Important parts:
+#### Important parts:
 
 * app
 * venv
@@ -51,6 +51,8 @@ bootstrap our Flask application.
 ```
 from app import app as application
 ```
+
+#### App Overview:
 
 Our application is located in the app/ dir. There are three main parts of our
 flask app.
