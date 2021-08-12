@@ -3,18 +3,16 @@
 [Random Doggo Link!](https://doggo.thefamu.net/)
 
 This project in particular just fetches a random dog picture URL from the
-random.dog picture api.
-
-[Random.Dog API](https://random.dog/woof.json "API for random.dog")
+[Random.Dog API](https://random.dog/woof.json "API for random.dog").
 
 ## Install Project & Python Dependencies: Linux
 
 ```
-# git clone https://github.com/BlueSquare23/Web_Development.git
-# cd Web_Development
-# virtualenv venv
-# source venv/bin/activate
-(venv) # pip3 install -r requests.txt
+git clone https://github.com/BlueSquare23/Web_Development.git
+cd Web_Development/FlaskApp/
+virtualenv venv			# Virtual Env Optional
+source venv/bin/activate	# Virtual Env Optional
+pip3 install -r requirements.txt
 ```
 
 ## Introduction:
@@ -25,8 +23,8 @@ To run the app locally for testing / dev purposes just enter the python virtual
 environment and launch the main \_\_init\_\_.py script.
 
 ```
-# source venv/bin/activate
-(venv) # python3 app/__init__.py
+source venv/bin/activate	# Virtual Env Optional
+python3 app/__init__.py
 ```
 
 Then visit `http://127.0.0.1:5000/` in a browser.
