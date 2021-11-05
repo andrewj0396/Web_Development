@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block head %}
+	<title>Random Doggo!</title>
+{% endblock %}
+
+{% block body %}
+	<center><h1>Random Doggo Picture!</h1></center>
+
+<div align="center" id="index">
+
+	<a href="{{doggo}}" alt="Random Doggo Link!" title="Click to see full size image!" target="_blank">
+		<img src="{{doggo}}" alt="Random Doggo!">
+	</a>
+
+	<div id="mobile_hovertext_replacement">
+		<a href="{{doggo}}" target="_blank">/\/\ Tap for full size image! /\/\</a>
+	</div>
+
+	<div class="form-group">
+		<form action="/" method="POST">
+			<input type="hidden" name="doggo" value="new_doggo">
+
+			<br/>
+
+			<button class="btn btn-primary" 
+				type="submit">Pick Random Doggo
+			</button>
+		</form>	
+	</div>
+</div>
+{% endblock %}
+

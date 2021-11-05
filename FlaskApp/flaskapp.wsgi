@@ -1,8 +1,2 @@
-import sys
-import logging
-
-logging.basicConfig(stream=sys.stderr)
-
-sys.path.insert(0,'/var/www/html/FlaskApp')
-
-from app import app as application
+from website import run_app 
+application = run_app()

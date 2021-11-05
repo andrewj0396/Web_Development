@@ -1,1 +1,5 @@
+*.log
+*.env
+*.misc/
 venv/
+__pycache__/

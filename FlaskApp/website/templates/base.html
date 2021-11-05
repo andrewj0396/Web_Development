@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+	{% block head %}{% endblock %}
+	<meta name="description" content="A collection of random internet dogs!">
+	<meta name="keywords" content="html python flask">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Bootstrap CSS Only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
+                rel="stylesheet" 
+                integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
+                crossorigin="anonymous">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}">
+</head>
+
+<body>
+<div id="bg">
+
+	{% block body %}{% endblock %}
+
+        <!-- Bootstrap JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" 
+                integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" 
+                crossorigin="anonymous">
+        </script>
+
+	<div id="bottom_links">
+		<a href="https://bluesquare23.sh/Web_Development/tree/master/FlaskApp" target="_blank">
+			Project Github
+		</a>
+	</div>
+
+</div>
+</body>
+</html>
