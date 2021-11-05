@@ -16,12 +16,16 @@ Testing Structure:
 
 First, there's a conftest.py file used for initializing the flask WSGI server
 when the tests are run. This script starts the application and sets up a
-test_client() that can be used to access the app.
+test\_client() that can be used to access the app.
 
 Conftest.py File:
 
+	import sys
 	import pytest
 	from website import run_app
+
+	app_path='website'
+	sys.path.insert(0, app_path)
 
 	application = run_app()
 
@@ -45,7 +49,7 @@ Main Functions to Test:
 	def get_doggo():
 
 The second part of this all are the test files themselves, named
-test__UNIT_FILE_NAME.py as per Pytest's naming conventions. They contain the
+test\_\_UNIT\_FILE\_NAME.py as per Pytest's naming conventions. They contain the
 actual test code that will be run against the flask application.
 
 ## Sample Test Case
@@ -54,7 +58,7 @@ actual test code that will be run against the flask application.
 		res = client.get('/')
 		assert res.status_code == 200		# Return's 200 to GET request
 
-If all of the test functions within the test__UNIT_FILE_NAME.py files return
+If all of the test functions within the test\_\_UNIT\_FILE\_NAME.py files return
 true then the tests are successful. However, if any of them fail the whole
 Pytest returns false.
 
