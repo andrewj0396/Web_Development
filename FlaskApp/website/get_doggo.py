@@ -1,6 +1,8 @@
 import requests
 import json
 
+#happy birthday ya idiot - Andy
+
 def get_doggo():
 	# Random.dog API Woof.json URL
 	url = "https://random.dog/woof.json"
